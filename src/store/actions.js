@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const getPosts = ({ commit }) => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then(response => {
-        commit('SET_POSTS',response.data)
-    })
+export const getPosts =  async ({ commit }) => {
+     await axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(response => {
+            commit('SET_POSTS',response.data)
+        })
 }
 
 export const removePost = ({commit,state},id) => {
